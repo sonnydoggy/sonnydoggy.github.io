@@ -1,38 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=VT323&display=swap&family=Rubik:ital,wght@0,300..900;1,300..900');
+
+body {
+  font-family: "VT323";
+  text-transform: lowercase;
+  color: white;
+  background-color: #191817;
+  font-size: 2em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.background-glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* lower z-index, behind content-overlay */
+}
+
+.content-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+
+  border-radius: 36px;
+  height: 100%;
+  width: 100%;
+}
+
+#header-text {
+  font-family: "Jersey 15";
+  text-transform: uppercase;
+  font-size: min(18vw, 15em);
+  line-height: 0.65;
+  margin: 0;
+}
+
+#scroll-hint {
+  justify-self: flex-end;
+  z-index: 2;
+  margin-bottom: 15px;
+}
+
+main {
+  margin: 0;
+}
+
+section {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-content {
+  padding: 64px;
 }
