@@ -36,13 +36,13 @@ function App() {
             </div>
             <div className="content-overlay" data-speed="1.1">
               <h1 id="header-text">SonnyDoggy</h1>
-              <span>she/her</span>
+              <span>creative generalist</span>
             </div>
             <span id="scroll-hint">↓ scroll ↓</span>
           </div>
         </header>
         <main>
-            <section style={{backgroundColor: "#ec7709"}}>
+            <section style={{backgroundImage: "linear-gradient(rgba(55, 18, 3, 0.8)), url(\"img/mera-view.webp\")"}}>
               <div data-speed="1.05" className="section-content">
                 <h2>
                   Hello, I'm sonnydoggy
