@@ -59,7 +59,7 @@ when you of in the cold food of out hot eat the food?
 
 # TODO FOR THE ~~BITCH~~ very nice person that helps me with programming <3
 
-- [ ] last.fm thingy on the right of above the divider at the top
+- [x] last.fm thingy on the right of above the divider at the top
 - [ ] actually make the content above somewhat better
 - [ ] add another thing under this for projects and such
     - i think it would be nice to have squares, although the ratio is something
