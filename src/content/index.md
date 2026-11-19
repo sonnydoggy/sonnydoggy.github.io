@@ -38,7 +38,7 @@ title: sonnydoggy
             <p class="music-title">shit (radio edit)</p>
             <p class="music-artist">ass</p>
         </div>
-        <img class="music-artwork" src="https://placehold.co/96x96" />
+        <img class="music-artwork" loading="lazy" src="/img/sonnyminion.png" />
     </div>
 </header>
 
@@ -109,6 +109,21 @@ yet
         gap: 0.5rem;
     }
 
+    .music-artwork {
+        aspect-ratio: 1 / 1;
+        height: 6rem;
+        animation: fadeIn 10s linear;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
     .music-title, .music-artist {
         margin: 0;
         text-align: right;
@@ -133,3 +148,83 @@ yet
         border-top: 1px solid var(--base02);
     }
 </style>
+
+<script>
+    const POLLING_INTERVAL_SEC = 30;
+    
+    const LFM_URL = "https://libre.fm/2.0/";
+    const MB_URL = "https://musicbrainz.org/ws/2/release/";
+    const CAA_URL = "https://coverartarchive.org/release/";
+
+    const musicEl = document.querySelector(".music-status");
+    const lfmParams = new URLSearchParams({
+        method: "user.getRecentTracks",
+        user: "sonnydoggy",
+        format: "json",
+        limit: "1",
+    });
+    const lfmUrl = `${LFM_URL}?${lfmParams.toString()}`;
+
+    let errCount = {
+        lfm: 0,
+        mb: 0,
+        caa: 0,
+    };
+
+    const updateMusic = async () => {
+        if (errCount.lfm > 3 || errCount.mb > 3 || errCount.caa > 3) {
+            setTimeout(updateMusic, 20_000);
+            return;
+        }
+        
+        const lfmResp = await fetch(lfmUrl);
+
+        if (!lfmResp.ok) {
+            errCount.lfm++;
+            setTimeout(updateMusic, 1_000);
+            return;
+        }
+
+        const data = await lfmResp.json();
+        const track = data.recenttracks.track[0] || data.recenttracks.track;
+
+        const mbidLookupParams = new URLSearchParams({
+            query: `artist:${track.artist["#text"]} AND release:${track.album["#text"]}`,
+            fmt: "json",
+        });
+        const mbidResp = await fetch(`${MB_URL}?${mbidLookupParams.toString()}`);
+
+        if (!mbidResp.ok) {
+            errCount.mb++;
+            setTimeout(updateMusic, 1_000);
+            return;
+        }
+
+        const mbid = (await mbidResp.json()).releases[0].id;
+        
+        const artworkResp = await fetch(`${CAA_URL}${mbid}`);
+
+        if (!artworkResp.ok) {
+            errCount.caa++;
+            setTimeout(updateMusic, 1_000);
+            return;
+        }
+
+        const artworkUrl =  (await artworkResp.json()).images[0].thumbnails.small;
+
+        const titleEl = document.querySelector(".music-title");
+        const artistEl = document.querySelector(".music-artist");
+        const artworkEl = document.querySelector(".music-artwork");
+
+        titleEl.textContent = track.name;
+        artistEl.textContent = track.artist["#text"];
+        
+        artworkEl.src = artworkUrl;
+        artworkEl.style.animation = "none";
+
+        errCount = { lfm: 0, mb: 0, caa: 0 };
+        setTimeout(updateMusic, POLLING_INTERVAL_SEC * 1_000);
+    };
+
+    void updateMusic();
+</script>
