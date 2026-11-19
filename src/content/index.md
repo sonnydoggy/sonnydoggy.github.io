@@ -31,6 +31,19 @@ is your recorded time in the test.
 when you of in the cold food of out hot eat the food?
 
 <style>
+    /* 
+        the horizontal rule "---" since you asked how to change it 
+        hr defaults to using all four border sides for styling, but it's easier to just use one
+        each property is applied in sequence: reset the border, then set border-top on its own
+    */
+    hr {
+        border: none;
+        
+        /* width, style, colour */
+        /* https://www.w3schools.com/css/css_border.asp (ctrl+click) */
+        border-top: 1px solid var(--base02);
+    }
+
     .profile {
         display: flex;
         align-items: center;
