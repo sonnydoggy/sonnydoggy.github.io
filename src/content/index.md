@@ -31,6 +31,12 @@ is your recorded time in the test.
 when you of in the cold food of out hot eat the food?
 
 <style>
+    /* links appear blue/purple by default and that's yucky. here's something nicer */
+    a {
+        color: var(--base0D); /* text colour. var(--base0D) comes from the style in index.astro */
+        text-decoration: none; /* remove underline */
+    }
+
     /* 
         the horizontal rule "---" since you asked how to change it 
         hr defaults to using all four border sides for styling, but it's easier to just use one
