@@ -18,7 +18,7 @@ is your recorded time in the test.
 
 when you of in the cold food of out hot eat the food?
 
-# TODO FOR THE ~~BITCH~~ very nice person that helps me with programming <3
+# TODO FOR THE ~~insert bad word here!~~ very nice person that helps me with programming <3
 
 - [x] last.fm thingy on the right of above the divider at the top
 - [ ] actually make the content above somewhat better -son
