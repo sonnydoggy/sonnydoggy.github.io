@@ -8,7 +8,10 @@ title: sonnydoggy
     <img class="avatar" src="https://avatars.githubusercontent.com/u/113544671" />
     <div class="bio">
         <h1 class="profile-name">sonnydoggy</h1>
+        <a href="https://sonnydoggy.bandcamp.com/"><img src="/88x31/sonny doggy music.gif" /></a>
         <a href="https://sonnydoggy.bandcamp.com/"><img src="/88x31/bandcamp.png" /></a>
+        <a href="https://www.youtube.com/@isthmuscollective/"><img src="/88x31/isthmus collective.gif" /></a>
+        <a href="https://bsky.app/profile/sonnydoggy.bsky.social/"><img src="/88x31/bluesky.gif" /></a>
         <p class="profile-bio"> pro/nouns anti/verbs or whatever you want to put here</p>
     </div>
 </div>
