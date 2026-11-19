@@ -92,7 +92,7 @@ fewer features. for the most part, it follows a standard of markdown called
     - i recommend putting them in `src/assets/` (you can create the folder if it
       doesn't exist), but they can go anywhere.
     - link to them in markdown like so:
-      `![image description](../assets/image.png)
+      `![image description](../assets/image.png)`
 
 - if you want to change the css styling of the general document (colour palette,
   fonts, etc.), you can edit the `<style>` in `index.astro`
