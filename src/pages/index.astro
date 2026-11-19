@@ -1,4 +1,6 @@
 ---
+import { Font } from "astro:assets";
+
 import * as content from "../content/index.md";
 const compiled = await content.compiledContent();
 ---
@@ -9,6 +11,8 @@ const compiled = await content.compiledContent();
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{content.frontmatter.title}</title>
+
+        <Font cssVariable="--font-fraunces" />
     </head>
 
     <body>
@@ -27,6 +31,7 @@ const compiled = await content.compiledContent();
     body {
         margin: 0;
         background-color: var(--base00);
+        font-family: var(--font-fraunces);
         color: var(--base05);
     }
 

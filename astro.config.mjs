@@ -5,10 +5,18 @@
 // you likely won't have to edit this much but in case you're interested:
 // https://docs.astro.build/en/guides/configuring-astro/
 
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import { satteri } from "@astrojs/markdown-satteri";
 
 export default defineConfig({
+    fonts: [
+        {
+            provider: fontProviders.fontsource(),
+            name: "Fraunces",
+            cssVariable: "--font-fraunces",
+        },
+    ],
+
     markdown: {
         // sätteri is a markdown processor
         // astro uses this to translate markdown files into HTML
