@@ -29,3 +29,20 @@ is your recorded time in the test.
 ### why do they call it oven
 
 when you of in the cold food of out hot eat the food?
+
+<style>
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .avatar {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .profile-name, .profile-bio {
+        margin: 0;
+    }
+</style>
