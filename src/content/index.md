@@ -34,6 +34,17 @@ is your recorded time in the test.
 
 when you of in the cold food of out hot eat the food?
 
+# TODO FOR THE ~~BITCH~~ very nice person that helps me with programming <3
+
+- [ ] last.fm thingy on the right of above the divider at the top
+- [ ] add another thing under this for projects and such
+    - i think it would be nice to have squares, although the ratio is something that has to be lookied at
+    - i think it would be cool to have like 3 or 4 next to each other could be cool
+
+---
+
+hello i am supposed to be the projects but my unpaid worker hasn't gotten here yet
+
 <style>
     /* links appear blue/purple by default and that's yucky. here's something nicer */
     a {
