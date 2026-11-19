@@ -8,7 +8,7 @@ title: sonnydoggy
     <img class="avatar" src="https://avatars.githubusercontent.com/u/113544671" />
     <div class="bio">
         <h1 class="profile-name">sonnydoggy</h1>
-        <p class="profile-bio">pro/nouns anti/verbs or whatever you want to put here</p>
+        <p class="profile-bio">![and now i kill myself](../assets/88x31/bandcamp.png) pro/nouns anti/verbs or whatever you want to put here</p>
     </div>
 </div>
 
