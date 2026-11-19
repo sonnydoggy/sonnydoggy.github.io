@@ -13,23 +13,6 @@ title: sonnydoggy
     </div>
 </div>
 
-<style>
-    .profile {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .avatar {
-        width: 6rem;
-        height: 6rem;
-    }
-
-    .profile-name, .profile-bio {
-        margin: 0;
-    }
-</style>
-
 ---
 
 ## the fitnessgram pacer test
