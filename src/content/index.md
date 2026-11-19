@@ -176,13 +176,16 @@ yet
             setTimeout(updateMusic, 20_000);
             return;
         }
-        
-        const lfmResp = await fetch(lfmUrl);
 
-        if (!lfmResp.ok) {
-            errCount.lfm++;
-            setTimeout(updateMusic, 1_000);
-            return;
+        let lfmResp;
+        try {
+            lfmResp = await fetch(lfmUrl);
+        } finally {
+            if (!lfmResp.ok) {
+                errCount.lfm++;
+                setTimeout(updateMusic, 1_000);
+                return;
+            }
         }
 
         const data = await lfmResp.json();
@@ -192,22 +195,29 @@ yet
             query: `artist:${track.artist["#text"]} AND release:${track.album["#text"]}`,
             fmt: "json",
         });
-        const mbidResp = await fetch(`${MB_URL}?${mbidLookupParams.toString()}`);
 
-        if (!mbidResp.ok) {
-            errCount.mb++;
-            setTimeout(updateMusic, 1_000);
-            return;
+        let mbidResp;
+        try {
+            mbidResp = await fetch(`${MB_URL}?${mbidLookupParams.toString()}`);
+        } finally {
+            if (!mbidResp.ok) {
+                errCount.mb++;
+                setTimeout(updateMusic, 1_000);
+                return;
+            }
         }
 
         const mbid = (await mbidResp.json()).releases[0].id;
-        
-        const artworkResp = await fetch(`${CAA_URL}${mbid}`);
 
-        if (!artworkResp.ok) {
-            errCount.caa++;
-            setTimeout(updateMusic, 1_000);
-            return;
+        let artworkResp;
+        try {
+            artworkResp = await fetch(`${CAA_URL}${mbid}`);
+        } finally {
+            if (!artworkResp.ok) {
+                errCount.caa++;
+                setTimeout(updateMusic, 1_000);
+                return;
+            }
         }
 
         const artworkUrl =  (await artworkResp.json()).images[0].thumbnails.small;
