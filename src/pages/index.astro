@@ -1,0 +1,81 @@
+---
+import * as content from "../content/index.md";
+const compiled = await content.compiledContent();
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{content.frontmatter.title}</title>
+    </head>
+
+    <body>
+        <main>
+            <article>
+                <Fragment set:html={compiled} />
+            </article>
+        </main>
+    </body>
+</html>
+
+<style>
+    /* document styles. to style the content, edit content/index.md instead */
+    /* nothing you apply here will apply to anything inside the Fragment (index.md content) */
+
+    body {
+        margin: 0;
+        background-color: var(--base00);
+        color: var(--base05);
+    }
+
+    main {
+        /* on big screens, the content is 120 characters wide. otherwise, full width */
+        max-width: min(120ch, 100%);
+
+        /* center the content inline by adding a margin around it
+        (inline is jargon for the horizontal/x axis) */
+        margin-inline: auto;
+
+        /* space between the content and the top of the screen */
+        margin-top: 2rem;
+
+        /* padding is space between the content and screen edges.
+        only really matters on small screens */
+        padding-inline: 1rem;
+    }
+</style>
+
+<style is:global>
+    /* global style variables */
+
+    :root {
+        /*
+            i use the base16 colour system for basically everything because it's
+            simple and consistent, we can change it if you don't like it though
+            https://github.com/chriskempson/base16/blob/main/styling.md
+
+            we can also add a theme switcher or dark-light toggle somehow
+
+            this theme is "cacao":
+            https://tinted-theming.github.io/tinted-gallery/#base16-cacao
+        */
+        --base00: #160f0c;
+        --base01: #241913;
+        --base02: #3a281e;
+        --base03: #766052;
+        --base04: #af9b8b;
+        --base05: #e8d6c4;
+        --base06: #eedecd;
+        --base07: #f4e6d6;
+        --base08: #e0705c;
+        --base09: #c77b4a;
+        --base0A: #e8a84a;
+        --base0B: #9ac97a;
+        --base0C: #74c8b0;
+        --base0D: #a89ad0;
+        --base0E: #ce8ab0;
+        --base0F: #4e382a;
+    }
+</style>
