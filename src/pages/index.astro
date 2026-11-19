@@ -1,4 +1,6 @@
 ---
+import PageHeader from "../components/PageHeader.astro";
+
 import { Font } from "astro:assets";
 
 import * as content from "../content/index.md";
@@ -17,6 +19,8 @@ const compiled = await content.compiledContent();
 
     <body>
         <main>
+            <PageHeader />
+
             <article>
                 <Fragment set:html={compiled} />
             </article>

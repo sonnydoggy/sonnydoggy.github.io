@@ -1,0 +1,201 @@
+---
+---
+
+<header class="page-header">
+    <div class="profile">
+        <img
+            class="avatar"
+            src="https://avatars.githubusercontent.com/u/113544671"
+        />
+        <div class="bio">
+            <h1 class="profile-name">sonnydoggy</h1>
+            <p class="profile-bio">
+                pro/nouns anti/verbs or whatever you want to put here
+            </p>
+            <nav class="badges">
+                <a href="https://sonnydoggy.bandcamp.com/">
+                    <img src="/88x31/sonny doggy music.gif" />
+                </a>
+                <a href="https://sonnydoggy.bandcamp.com/">
+                    <img src="/88x31/bandcamp.png" />
+                </a>
+                <a href="https://www.youtube.com/@isthmuscollective/">
+                    <img src="/88x31/isthmus collective.gif" />
+                </a>
+                <a href="https://bsky.app/profile/sonnydoggy.bsky.social/">
+                    <img src="/88x31/bluesky.gif" />
+                </a>
+                <a href="https://www.youtube.com/@sonnydog/">
+                    <img src="/88x31/youtube.png" />
+                </a>
+            </nav>
+        </div>
+    </div>
+    <div class="music-status">
+        <div class="music-info">
+            <span class="music-title">shit (radio edit)</span>
+            <span class="music-artist">ass</span>
+        </div>
+        <img class="music-artwork" loading="lazy" src="/img/sonnyminion.png" />
+    </div>
+</header>
+
+<style>
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--base02);
+    }
+
+    .profile {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .bio {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .profile-name,
+    .profile-bio {
+        margin: 0;
+    }
+
+    .badges {
+        margin-block: 0.5rem;
+    }
+
+    .avatar {
+        aspect-ratio: 1 / 1;
+        height: 8rem;
+    }
+
+    .music-status {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .music-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .music-artwork {
+        aspect-ratio: 1 / 1;
+        height: 6rem;
+        animation: fadeIn 10s linear;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .music-title,
+    .music-artist {
+        text-align: right;
+    }
+</style>
+
+<script>
+    const POLLING_INTERVAL_SEC = 30;
+
+    const LFM_URL = "https://libre.fm/2.0/";
+    const MB_URL = "https://musicbrainz.org/ws/2/release/";
+    const CAA_URL = "https://coverartarchive.org/release/";
+
+    const lfmParams = new URLSearchParams({
+        method: "user.getRecentTracks",
+        user: "sonnydoggy",
+        format: "json",
+        limit: "1",
+    });
+    const lfmUrl = `${LFM_URL}?${lfmParams.toString()}`;
+
+    let errCount = {
+        lfm: 0,
+        mb: 0,
+        caa: 0,
+    };
+
+    const updateMusic = async () => {
+        if (errCount.lfm > 3 || errCount.mb > 3 || errCount.caa > 3) {
+            setTimeout(updateMusic, 20_000);
+            return;
+        }
+
+        let lfmResp;
+        try {
+            lfmResp = await fetch(lfmUrl);
+        } finally {
+            if (!lfmResp?.ok) {
+                errCount.lfm++;
+                setTimeout(updateMusic, 1_000);
+                return;
+            }
+        }
+
+        const data = await lfmResp.json();
+        const track = data.recenttracks.track[0] || data.recenttracks.track;
+
+        const mbidLookupParams = new URLSearchParams({
+            query: `artist:${track.artist["#text"]} AND release:${track.album["#text"]}`,
+            fmt: "json",
+        });
+
+        let mbidResp;
+        try {
+            mbidResp = await fetch(`${MB_URL}?${mbidLookupParams.toString()}`);
+        } finally {
+            if (!mbidResp?.ok) {
+                errCount.mb++;
+                setTimeout(updateMusic, 1_000);
+                return;
+            }
+        }
+
+        const mbid = (await mbidResp.json()).releases[0].id;
+
+        let artworkResp;
+        try {
+            artworkResp = await fetch(`${CAA_URL}${mbid}`);
+        } finally {
+            if (!artworkResp?.ok) {
+                errCount.caa++;
+                setTimeout(updateMusic, 1_000);
+                return;
+            }
+        }
+
+        const artworkUrl = (await artworkResp.json()).images[0].thumbnails
+            .small;
+
+        const titleEl = document.querySelector(
+            ".music-title",
+        )! as HTMLSpanElement;
+        const artistEl = document.querySelector(
+            ".music-artist",
+        )! as HTMLSpanElement;
+        const artworkEl = document.querySelector(
+            ".music-artwork",
+        )! as HTMLImageElement;
+
+        titleEl.textContent = track.name;
+        artistEl.textContent = track.artist["#text"];
+
+        artworkEl.src = artworkUrl;
+        artworkEl.style.animation = "none";
+
+        errCount = { lfm: 0, mb: 0, caa: 0 };
+        setTimeout(updateMusic, POLLING_INTERVAL_SEC * 1_000);
+    };
+
+    void updateMusic();
+</script>
