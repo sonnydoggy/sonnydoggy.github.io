@@ -9,6 +9,15 @@ import { defineConfig, fontProviders } from "astro/config";
 import { satteri } from "@astrojs/markdown-satteri";
 
 export default defineConfig({
+    // add fonts to use here. fontsource is a good provider to use, they have basically
+    // everything all the other ones do: https://fontsource.org/
+    //
+    // pick the font name and the css variable to use (i suggest --font-font-name
+    // for consistency), then set the font in css using font-family: var(--font-font-name);
+    //
+    // make sure the page has the <Font /> component (like in index.astro) to tell astro to
+    // use the css variable
+    // more info: https://docs.astro.build/en/guides/fonts/#using-fontsource
     fonts: [
         {
             provider: fontProviders.fontsource(),
