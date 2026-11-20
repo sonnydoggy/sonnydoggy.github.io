@@ -282,8 +282,9 @@ import { Image } from "astro:assets";
 
     void updateMusic();
 </script>
+
 <script>
-    const verbs = [
+    const VERBS = [
         "wandering",
         "stumbling",
         "bouncing",
@@ -299,7 +300,7 @@ import { Image } from "astro:assets";
         "tiptoeing",
     ];
 
-    const descriptors = [
+    const DESCRIPTORS = [
         "world wide web",
         "information superhighway",
         "interwebs",
@@ -318,9 +319,9 @@ import { Image } from "astro:assets";
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    const verbEl = document.getElementById("random-verb");
-    const descEl = document.getElementById("random-descriptor");
+    const verbEl = document.getElementById("random-verb")! as HTMLElement;
+    const descEl = document.getElementById("random-descriptor")! as HTMLElement;
 
-    if (verbEl) verbEl.textContent = pickRandom(verbs);
-    if (descEl) descEl.textContent = pickRandom(descriptors);
+    verbEl.textContent = pickRandom(VERBS);
+    descEl.textContent = pickRandom(DESCRIPTORS);
 </script>
