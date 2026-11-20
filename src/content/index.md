@@ -31,10 +31,6 @@ that still doesn't really explain what i do, so here's a list to cover a few thi
 - winter, autumn & spring
   - (in descending likeness order)
 
-### dislikes
-
-yeah i don't really see the point in a dislikes section like i dislike president trump ok cool everyone does
-
 ### TODO FOR THE ~~insert bad word here!~~ very nice person that helps me with programming <3
 
 - [x] last.fm thingy on the right of above the divider at the top
