@@ -3,22 +3,39 @@
 title: sonnydoggy
 ---
 
-## the fitnessgram pacer test
+## hey, it's me, sonnydoggity
 
-is a multistage aerobic capacity test that progressively gets more difficult as
-it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the
-start.
+i am sonnydoggy, and i do not like introductions like these. often i keep them short, but this is my big cool website, so it should probably explain a bit about who i actually am. so, let's go. lock in
 
-The running speed starts slowly, but gets faster each minute after you hear this
-signal. [Beep] A single lap should be completed each time you hear the beep
-sound. The test ends when you miss your beep. The time you hear from the start
-is your recorded time in the test.
+### profession
 
-### why do they call it oven
+i do a lot of things as my craft, and often i just bundle it up into "creative generalist". it describes exactly what i like doing, but it doesn't go into any detail. so, i'll start with what creative generalist actually means. often people specialise in a certain aspect of their profession, say web development. you're programming, but more specifically, you're developing a website. as the name suggests, creative generalist basically means that i do anything i come across within my profession. to be more specific, i would be a digital creative generalist, since i like doing digital stuff, but...
 
-when you of in the cold food of out hot eat the food?
+that still doesn't really explain what i do, so here's a list to cover a few things i have some experience in:
 
-# TODO FOR THE ~~insert bad word here!~~ very nice person that helps me with programming <3
+- film director
+- writer
+- animator (3d & 2d)
+- modeller
+- composer
+- voice actor
+
+### likes
+
+- foxes
+- dogs
+- cats
+- candy
+- sleep
+- indie games & movies
+- winter, autumn & spring
+  - (in descending likeness order)
+
+### dislikes
+
+yeah i don't really see the point in a dislikes section like i dislike president trump ok cool everyone does
+
+### TODO FOR THE ~~insert bad word here!~~ very nice person that helps me with programming <3
 
 - [x] last.fm thingy on the right of above the divider at the top
 - [ ] actually make the content above somewhat better -son
