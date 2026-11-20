@@ -1,4 +1,6 @@
 ---
+// astro image optimisation component
+import { Image } from "astro:assets";
 ---
 
 <header class="page-header">
@@ -6,6 +8,7 @@
         <img
             class="avatar"
             src="https://avatars.githubusercontent.com/u/113544671"
+            alt="avatar"
         />
         <div class="bio">
             <h1 class="profile-name">sonnydoggy</h1>
@@ -14,19 +17,44 @@
             </p>
             <nav class="badges">
                 <a href="https://sonnydoggy.bandcamp.com/">
-                    <img src="/88x31/bandcamp.gif" />
+                    <Image
+                        src="/88x31/bandcamp.gif"
+                        alt="bandcamp"
+                        width={88}
+                        height={31}
+                    />
                 </a>
                 <a href="https://www.youtube.com/@isthmuscollective/">
-                    <img src="/88x31/isthmus collective.gif" />
+                    <Image
+                        src="/88x31/isthmus collective.gif"
+                        alt="isthmus collective - youtube"
+                        width={88}
+                        height={31}
+                    />
                 </a>
                 <a href="https://bsky.app/profile/sonnydoggy.bsky.social/">
-                    <img src="/88x31/bluesky.gif" />
+                    <Image
+                        src="/88x31/bluesky.gif"
+                        alt="bluesky"
+                        width={88}
+                        height={31}
+                    />
                 </a>
                 <a href="https://www.youtube.com/@sonnydog/">
-                    <img src="/88x31/youtube.png" />
+                    <Image
+                        src="/88x31/youtube.png"
+                        alt="youtube"
+                        width={88}
+                        height={31}
+                    />
                 </a>
                 <a href="https://www.youtube.com/@sawneydawgey/">
-                    <img src="/88x31/sonny minion 88x31.gif" />
+                    <Image
+                        src="/88x31/sonny minion 88x31.gif"
+                        alt="woof woof kaboom"
+                        width={88}
+                        height={31}
+                    />
                 </a>
             </nav>
         </div>
