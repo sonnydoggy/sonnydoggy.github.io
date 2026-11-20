@@ -14,7 +14,8 @@ import { Image } from "astro:assets";
         <div class="bio">
             <h1 class="profile-name">sonnydoggy</h1>
             <p class="profile-bio">
-                pro/nouns anti/verbs or whatever you want to put here
+                a creative generalist <span id="random-verb">floating</span>{" "}
+                around on the <span id="random-descriptor">interwebs</span>
             </p>
             <nav class="badges">
                 <a href="https://sonnydoggy.bandcamp.com/">
@@ -135,6 +136,8 @@ import { Image } from "astro:assets";
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        margin-left: -0.5rem;
+        margin-top: -1rem;
     }
 
     .profile-name,
@@ -278,4 +281,46 @@ import { Image } from "astro:assets";
     };
 
     void updateMusic();
+</script>
+<script>
+    const verbs = [
+        "wandering",
+        "stumbling",
+        "bouncing",
+        "floating",
+        "tumbling",
+        "drifting",
+        "rolling",
+        "skipping",
+        "moseying",
+        "gallivanting",
+        "prancing",
+        "zooming",
+        "tiptoeing",
+    ];
+
+    const descriptors = [
+        "world wide web",
+        "information superhighway",
+        "interwebs",
+        "cyber frontier",
+        "digital wilderness",
+        "series of tubes",
+        "net",
+        "web",
+        "online realm",
+        "electronic ether",
+        "cyberspace",
+        "digital playground",
+    ];
+
+    function pickRandom(arr: string[]): string {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    const verbEl = document.getElementById("random-verb");
+    const descEl = document.getElementById("random-descriptor");
+
+    if (verbEl) verbEl.textContent = pickRandom(verbs);
+    if (descEl) descEl.textContent = pickRandom(descriptors);
 </script>
