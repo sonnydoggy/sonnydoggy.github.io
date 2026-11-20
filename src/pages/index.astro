@@ -1,5 +1,6 @@
 ---
 import PageHeader from "../components/PageHeader.astro";
+import PageFooter from "../components/PageFooter.astro";
 
 import { Font } from "astro:assets";
 
@@ -24,6 +25,8 @@ const compiled = await content.compiledContent();
             <article>
                 <Fragment set:html={compiled} />
             </article>
+
+            <PageFooter />
         </main>
     </body>
 </html>
