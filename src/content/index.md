@@ -5,7 +5,7 @@ title: sonnydoggy
 
 ## summary
 
-> i am **sonnydoggy**, i come from the edge of the most normal town in **the netherlands**, and i like to make films, music, stories, worlds, & **art**. anything that piques my interest makes its way into what i do to contribute to society and the *universe*. i like being experimental and **learning new things** or growing where there is still room to.
+> i am **sonnydoggy**, i come from the edge of a mostly normal town in **the netherlands**, and i like to make films, music, stories, worlds, & **art**. anything that piques my interest makes its way into what i do to contribute to society and the *universe*. i like being experimental and **learning new things** or growing where there is still room to.
 
 ### profession
 
