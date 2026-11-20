@@ -3,15 +3,15 @@
 title: sonnydoggy
 ---
 
-## hey, it's me, sonnydoggity
+## summary
 
-i am sonnydoggy, and i do not like introductions like these. often i keep them short, but this is my big cool website, so it should probably explain a bit about who i actually am. so, let's go. lock in
+> i am **sonnydoggy**, i come from the edge of the most normal town in **the netherlands**, and i like to make films, music, stories, worlds, & **art**. anything that piques my interest makes its way into what i do to contribute to society and the *universe*. i like being experimental and **learning new things** or growing where there is still room to.
 
 ### profession
 
-i do a lot of things as my craft, and often i just bundle it up into "creative generalist". it describes exactly what i like doing, but it doesn't go into any detail. so, i'll start with what creative generalist actually means. often people specialise in a certain aspect of their profession, say web development. you're programming, but more specifically, you're developing a website. as the name suggests, creative generalist basically means that i do anything i come across within my profession. to be more specific, i would be a digital creative generalist, since i like doing digital stuff, but...
+> i do a lot of things as my craft, and often i just bundle it up into *"creative generalist"*. it describes exactly **what i like doing**, but it doesn't go into any **detail**. so, i'll start with what *creative generalist* actually means for me. often people specialise in a certain aspect of their profession, say *web development*. you're programming, but more specifically, you're **developing a website**. as the name suggests, *creative generalist* basically means that i do anything i come across within my profession, without being specific about **how or what i do**
 
-that still doesn't really explain what i do, so here's a list to cover a few things i have some experience in:
+> that doesn't explain exactly what i do, so here's a list of a few things i have some experience in:
 
 - film director
 - writer
@@ -34,8 +34,9 @@ that still doesn't really explain what i do, so here's a list to cover a few thi
 ### TODO FOR THE ~~insert bad word here!~~ very nice person that helps me with programming <3
 
 - [x] last.fm thingy on the right of above the divider at the top
-- [ ] actually make the content above somewhat better -son
+- [x] actually make the content above somewhat better -son
 - [x] add more social media 88x31 banners -son
+- [ ] footer stuff time
 - [ ] add another thing under this for projects and such -bin
     - i think it would be nice to have squares, although the ratio is something
       that has to be lookied at
