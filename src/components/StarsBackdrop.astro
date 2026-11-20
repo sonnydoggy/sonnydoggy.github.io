@@ -1,0 +1,103 @@
+---
+---
+
+<div class="backdrop-container">
+    <canvas class="backdrop"></canvas>
+</div>
+
+<style>
+    .backdrop-container {
+        position: fixed;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .backdrop {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+    const MIN_SPEED = 0.5,
+        MAX_SPEED = 1.0;
+
+    const MIN_SIZE = 1.5,
+        MAX_SIZE = 2;
+
+    const docStyle = getComputedStyle(document.documentElement);
+    const COLORS = [
+        docStyle.getPropertyValue("--base01"),
+        docStyle.getPropertyValue("--base02"),
+    ];
+
+    const N_STARS = 100;
+
+    const randRange = (min: number, max: number) =>
+        Math.random() * (max - min) + min;
+
+    const cont = document.querySelector(".backdrop-container")! as HTMLElement;
+    const canvas = document.querySelector(".backdrop")! as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d")!;
+
+    function updateCanvasSize() {
+        const rect = cont.getBoundingClientRect();
+        canvas.width = rect.width * window.devicePixelRatio;
+        canvas.height = rect.height * window.devicePixelRatio;
+        canvas.style.width = rect.width + "px";
+        canvas.style.height = rect.height + "px";
+    }
+
+    updateCanvasSize();
+    window.onresize = updateCanvasSize;
+
+    interface Star {
+        pos: { x: number; y: number };
+        speed: number;
+        size: number;
+        color: string;
+    }
+
+    let stars: Star[] = [];
+
+    // generate initial stars
+    for (let i = 0; i < N_STARS; i++) {
+        stars.push({
+            pos: {
+                x: randRange(0, canvas.width),
+                y: randRange(0, canvas.height),
+            },
+            speed: randRange(MIN_SPEED, MAX_SPEED),
+            size: randRange(MIN_SIZE, MAX_SIZE),
+            color: COLORS[Math.floor(randRange(0, COLORS.length))],
+        });
+    }
+
+    function tickLoop() {
+        // clear the canvas for the next frame
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // update and draw stars
+        for (let s of stars) {
+            s.pos.y += s.speed;
+
+            // if the star moved off the screen, recycle it
+            if (s.pos.y > canvas.height * 1.05) {
+                s.pos.y = -10;
+                s.pos.x = randRange(0, canvas.width);
+            }
+
+            ctx.fillStyle = s.color;
+            ctx.fillRect(s.pos.x, s.pos.y, s.size, s.size);
+        }
+
+        // wait before drawing the next frame, target 60fps
+        setTimeout(() => requestAnimationFrame(tickLoop), 1000 / 60);
+    }
+
+    // begin
+    tickLoop();
+</script>
