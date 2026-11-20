@@ -22,7 +22,7 @@ when you of in the cold food of out hot eat the food?
 
 - [x] last.fm thingy on the right of above the divider at the top
 - [ ] actually make the content above somewhat better -son
-- [ ] add more social media 88x31 banners -son
+- [x] add more social media 88x31 banners -son
 - [ ] add another thing under this for projects and such -bin
     - i think it would be nice to have squares, although the ratio is something
       that has to be lookied at
