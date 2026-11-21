@@ -54,6 +54,9 @@ things i have some experience in:
       that has to be lookied at
     - i think it would be cool to have like 3 or 4 next to each other could be
       cool
+- [ ] center projects section
+- [ ] make projects section separate file
+- [ ] add project type in projects
 
 ---
 
