@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+
+// href and loading are optional
+// loading tells the page how much to prioritise loading the image. defaults to lazy
+// i suggest keeping lazy loading if you don't need to scroll or something to see it
+// use eager if the image is visible right away on page load
+interface Props {
+    src: string;
+    alt: string;
+    href?: string;
+    loading?: "lazy" | "eager";
+}
+
+const { src, alt, href, loading } = Astro.props;
+---
+
+<a href={href || null} style="display: block">
+    <Image
+        src={src}
+        alt={alt}
+        width={88}
+        height={31}
+        loading={loading || "lazy"}
+    />
+</a>
