@@ -25,6 +25,8 @@ title: sonnydoggy
 - seasons & weather.....| winter & snow, autumn, rain & mist, spring & trees blooming
 - peoples.....| passionate & curious
 
+---
+
 ### TODO FOR THE ~~insert bad word here!~~ very nice person that helps me with programming <3
 
 - [x] last.fm thingy on the right of above the divider at the top
