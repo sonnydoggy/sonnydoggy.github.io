@@ -35,13 +35,10 @@ import Badge from "./Badge.astro";
         <div class="header-box">
             <img
                 class="header-image"
-                src="/img/sonnyminion.png"
+                src="/img/nothing project.jpg"
                 alt="description"
             />
-            <p class="header-text">
-                this project name is super long and annoying when putting it in
-                here
-            </p>
+            <p class="header-text">nothing project</p>
             <hr class="header-divider" />
             <div class="header-badges">
                 <Badge
@@ -122,6 +119,8 @@ import Badge from "./Badge.astro";
     .header-image {
         height: var(--boxsize);
         width: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
     }
 
     .header-badges {
