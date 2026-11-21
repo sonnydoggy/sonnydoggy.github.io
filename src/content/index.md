@@ -4,7 +4,7 @@ title: sonnydoggy
 ---
 
 ## summary
-> i am **sonnydoggy**, i come from the outskirts of a mostly normal town in **the netherlands**, and i like to make films, music, stories, worlds, & **art**. anything that piques my interest makes its way into what i do to contribute to society and the *universe*. i like being experimental and **learning new things** or growing where there is still room to.
+> i am **sonnydoggy**, i come from the outskirts of a mostly normal town in **the netherlands**, and in my quiet room i like to make films, music, stories, worlds, & **art**. anything that piques my interest makes its way into what i do to contribute to society and the *universe*. i like being experimental and **learning new things** or growing where there is still room to
 
 ### profession
 > i do a lot of things as my craft, and often i just bundle it up into *"creative generalist"*. it describes exactly **what i like doing**, but it doesn't go into any **detail**. so, i'll start with what *creative generalist* actually means for me. often people specialise in a certain aspect of their profession, say *web development*. you're programming, but more specifically, you're **developing a website**. as the name suggests, *creative generalist* basically means that i do anything i come across within my profession, without being specific about **how or what i do**
