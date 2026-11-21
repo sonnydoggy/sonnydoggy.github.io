@@ -22,19 +22,43 @@
 </style>
 
 <script>
-    const MIN_SPEED = 0.5,
-        MAX_SPEED = 1.0;
+    const MIN_SPEED = 0.25,
+        MAX_SPEED = 0.5;
 
-    const MIN_SIZE = 1.5,
-        MAX_SIZE = 2;
+    const MIN_SIZE = 1,
+        MAX_SIZE = 1.5;
 
     const docStyle = getComputedStyle(document.documentElement);
+
     const COLORS = [
+        "transparent",
         docStyle.getPropertyValue("--base01"),
         docStyle.getPropertyValue("--base02"),
     ];
 
-    const N_STARS = 100;
+    // not sure of the best way to make variants, but i did my best
+    // each number is an index of COLORS (indices start at 0)
+    const VARIANTS = [
+        [
+            [0, 1, 0],
+            [1, 2, 1],
+            [0, 1, 0],
+        ],
+        [
+            [1, 0, 1],
+            [0, 1, 0],
+            [1, 0, 1],
+        ],
+        [
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+            [1, 1, 2, 1, 1],
+            [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+        ],
+    ];
+
+    const N_STARS = 50;
 
     const randRange = (min: number, max: number) =>
         Math.random() * (max - min) + min;
@@ -58,7 +82,7 @@
         pos: { x: number; y: number };
         speed: number;
         size: number;
-        color: string;
+        variant: number;
     }
 
     let stars: Star[] = [];
@@ -72,7 +96,7 @@
             },
             speed: randRange(MIN_SPEED, MAX_SPEED),
             size: randRange(MIN_SIZE, MAX_SIZE),
-            color: COLORS[Math.floor(randRange(0, COLORS.length))],
+            variant: Math.floor(randRange(0, VARIANTS.length)),
         });
     }
 
@@ -90,12 +114,22 @@
                 s.pos.x = randRange(0, canvas.width);
             }
 
-            ctx.fillStyle = s.color;
-            ctx.fillRect(s.pos.x, s.pos.y, s.size, s.size);
+            const map = VARIANTS[s.variant];
+            for (let y = 0; y < map.length; y++) {
+                for (let x = 0; x < map[y].length; x++) {
+                    ctx.fillStyle = COLORS[map[y][x]];
+                    ctx.fillRect(
+                        s.pos.x + x * s.size,
+                        s.pos.y + y * s.size,
+                        s.size,
+                        s.size,
+                    );
+                }
+            }
         }
 
-        // wait before drawing the next frame, target 60fps
-        setTimeout(() => requestAnimationFrame(tickLoop), 1000 / 60);
+        // wait before drawing the next frame, target 24fps
+        setTimeout(() => requestAnimationFrame(tickLoop), 1000 / 24);
     }
 
     // begin

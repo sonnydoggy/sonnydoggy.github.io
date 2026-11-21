@@ -1,12 +1,96 @@
 ---
+// i made a component for 88x31s, if you find it easier
+// you can import it and use it in the header the same way
+// i'd name it 88x31 but we can't start shit with numbers :c
+import Badge from "./Badge.astro";
 ---
 
 <footer class="page-footer">
-    <span>footer content and stuff goes here</span>
+    <div class="content">
+        <div class="left">
+            <h2 class="title">sonnydoggy</h2>
+            <p class="copy">&copy; 2026</p>
+        </div>
+        <div class="right">
+            <p>pee pee poo poo</p>
+        </div>
+    </div>
+    <div class="footer-badges">
+        <!-- example -->
+        <Badge
+            src="/88x31/sonnyminion.gif"
+            alt="woof woof kaboom"
+            href="https://www.youtube.com/@sawneydawgey/"
+        />
+        <Badge
+            src="/88x31/sonnyminion.gif"
+            alt="woof woof kaboom"
+            href="https://www.youtube.com/@sawneydawgey/"
+        />
+        <Badge
+            src="/88x31/sonnyminion.gif"
+            alt="woof woof kaboom"
+            href="https://www.youtube.com/@sawneydawgey/"
+        />
+        <Badge
+            src="/88x31/sonnyminion.gif"
+            alt="woof woof kaboom"
+            href="https://www.youtube.com/@sawneydawgey/"
+        />
+        <Badge
+            src="/88x31/sonnyminion.gif"
+            alt="woof woof kaboom"
+            href="https://www.youtube.com/@sawneydawgey/"
+        />
+    </div>
 </footer>
 <style>
     .page-footer {
         border-top: 1px solid var(--base03);
         height: 6rem;
+        padding-block: 0.5rem;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title,
+    .copy {
+        margin: 0;
+    }
+
+    .footer-badges {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+        /*
+        if you want to add space between the 88x31s:
+        gap: 0.5rem;
+        */
     }
 </style>
+
+<!--
+<a href="https://example.com">Untitled</a> © 1999 by{" "}
+<a href="https://example.com">Jane Doe</a> is licensed under{" "}
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+<img
+    src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+    alt=""
+    style="max-width: 1em;max-height:1em;margin-left: .2em;"
+/>
+<img
+    src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+    alt=""
+    style="max-width: 1em;max-height:1em;margin-left: .2em;"
+/>
+-->
+
+<!-- https://creativecommons.org/chooser/ -->
