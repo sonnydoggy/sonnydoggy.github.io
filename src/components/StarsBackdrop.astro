@@ -22,11 +22,17 @@
 </style>
 
 <script>
-    const MIN_SPEED = 0.25,
-        MAX_SPEED = 0.5;
+    // TWINKLE constants
+    const TWINKLE_CHANCE = 0.1;
+    const MIN_TWINKLE_SPEED = 0.1;
+    const MAX_TWINKLE_SPEED = 0.5;
+    const MIN_OPACITY = 0.5;
 
-    const MIN_SIZE = 1,
-        MAX_SIZE = 1.5;
+    const MIN_SPEED = 0.5,
+        MAX_SPEED = 2.5;
+
+    const MIN_SIZE = 1.5,
+        MAX_SIZE = 2.5;
 
     const docStyle = getComputedStyle(document.documentElement);
 
@@ -46,7 +52,7 @@
         ],
         [
             [1, 0, 1],
-            [0, 1, 0],
+            [0, 2, 0],
             [1, 0, 1],
         ],
         [
@@ -54,6 +60,13 @@
             [0, 0, 1, 0, 0],
             [1, 1, 2, 1, 1],
             [0, 0, 1, 0, 0],
+            [0, 0, 1, 0, 0],
+        ],
+        [
+            [0, 0, 1, 0, 0],
+            [0, 1, 2, 1, 0],
+            [1, 2, 2, 2, 1],
+            [0, 1, 2, 1, 0],
             [0, 0, 1, 0, 0],
         ],
     ];
@@ -83,6 +96,11 @@
         speed: number;
         size: number;
         variant: number;
+
+        // TWINKLE interace shit
+        twinkles: boolean; // new
+        twinklePhase: number; // new
+        twinkleSpeed: number; // new
     }
 
     let stars: Star[] = [];
@@ -97,6 +115,11 @@
             speed: randRange(MIN_SPEED, MAX_SPEED),
             size: randRange(MIN_SIZE, MAX_SIZE),
             variant: Math.floor(randRange(0, VARIANTS.length)),
+
+            // TWINKLE speed
+            twinkles: Math.random() < TWINKLE_CHANCE,
+            twinklePhase: randRange(0, Math.PI * 2),
+            twinkleSpeed: randRange(MIN_TWINKLE_SPEED, MAX_TWINKLE_SPEED),
         });
     }
 
@@ -113,6 +136,17 @@
                 s.pos.y = -10;
                 s.pos.x = randRange(0, canvas.width);
             }
+
+            // TWINKLE opacity
+            let opacity = 1;
+            if (s.twinkles) {
+                s.twinklePhase += s.twinkleSpeed;
+                opacity =
+                    MIN_OPACITY +
+                    (1 - MIN_OPACITY) * ((Math.sin(s.twinklePhase) + 1) / 2);
+            }
+
+            ctx.globalAlpha = opacity;
 
             const map = VARIANTS[s.variant];
             for (let y = 0; y < map.length; y++) {
