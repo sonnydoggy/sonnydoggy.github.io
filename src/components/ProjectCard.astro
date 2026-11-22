@@ -19,15 +19,14 @@ const { src, alt, href, title, year, date, loading } = Astro.props;
 ---
 
 <div class="card">
-    <p class="project-image">
-        <Image
-            src={src}
-            alt={alt}
-            width={15 * 16}
-            height={15 * 16}
-            loading={loading || "lazy"}
-        />
-    </p>
+    <Image
+        src={src}
+        alt={alt}
+        width={15 * 16}
+        height={15 * 16}
+        loading={loading || "lazy"}
+        class="project-image"
+    />
     <p class="project-title">{title}</p>
     <p class="project-year">{year}</p>
     <p class="project-date">{date}</p>
