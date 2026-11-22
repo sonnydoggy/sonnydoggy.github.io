@@ -34,7 +34,7 @@ const { src, alt, href, title, year, date, type, loading } = Astro.props;
         <div class="project-info">
             <p class="project-date">
                 {year}
-                {year && date && " — "}
+                {year && date && ", "}
                 {date}
             </p>
             {type && <p class="project-type">{type}</p>}

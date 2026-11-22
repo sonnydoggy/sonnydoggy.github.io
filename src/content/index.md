@@ -62,6 +62,8 @@ things i have some experience in:
 
 ---
 
+## portfolio
+
 <style>
     /* links appear blue/purple by default and that's yucky. here's something nicer */
     a {
