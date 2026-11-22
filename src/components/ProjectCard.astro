@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+
+// href and loading are optional
+// loading tells the page how much to prioritise loading the image. defaults to lazy
+// i suggest keeping lazy loading if you don't need to scroll or something to see it
+// use eager if the image is visible right away on page load
+interface Props {
+    src: string;
+    alt: string;
+    text: string;
+    year: string;
+    date: string;
+    href?: string;
+    loading?: "lazy" | "eager";
+}
+
+const { src, alt, href, title, year, date, loading } = Astro.props;
+---
+
+<div class="card">
+    <p class="project-image">
+        <Image
+            src={src}
+            alt={alt}
+            width={15 * 16}
+            height={15 * 16}
+            loading={loading || "lazy"}
+        />
+    </p>
+    <p class="project-title">{title}</p>
+    <p class="project-year">{year}</p>
+    <p class="project-date">{date}</p>
+</div>
+
+<style>
+    .card {
+        /**/
+    }
+
+    /* did you mean to put the page header style here? cuz it's in PageHeader.astro no? */
+    /* temporary */
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--base02);
+        align-items: center;
+    }
+
+    .header-boxes {
+        display: flex;
+        gap: 1rem; /* space between boxes */
+        flex-wrap: wrap; /* wraps to next line if too many */
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid var(--base03);
+        background-color: var(--base01); /* subtle background tint */
+        width: var(--boxsize); /* shrinks to the image width */
+    }
+
+    .project-image {
+        border-bottom: 2px solid var(--base03);
+        margin: 0rem;
+    }
+
+    .project-title {
+        text-align: center;
+        padding: 0.25rem;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        margin: 0;
+    }
+
+    .project-year {
+        text-align: right;
+        font-size: 0.9em;
+        opacity: 0.75;
+        font-style: italic;
+    }
+
+    .project-date {
+        text-align: right;
+        font-size: 0.9em;
+        opacity: 0.75;
+        font-style: italic;
+    }
+</style>
