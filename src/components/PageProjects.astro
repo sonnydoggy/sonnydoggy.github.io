@@ -6,271 +6,201 @@ import Badge from "./Badge.astro";
 import Project from "./ProjectCard.astro";
 ---
 
-<div class="page-header">
-    <!-- new header box -->
-    <div class="header-boxes">
-        <!-- box 1 -->
-        <div class="header-box">
-            <img
-                class="header-image"
-                src="/img/sonnyminion.png"
-                alt="im a dog boy"
+<div class="project-cards">
+    <!-- the template -->
+
+    <Project
+        src="/img/sonnyminion.png"
+        alt="image of a dog"
+        title="my dog is cool and awesome"
+        year="2026"
+        date=""
+    >
+        <div class="project-badges">
+            <Badge
+                src="/88x31/bandcamp.png"
+                alt="song on bandcamp"
+                href="https://sonnydoggy.bandcamp.com/album/dreaming-in-a-faithful-world/"
             />
-            <p class="header-text">my dog is cool and awesome</p>
-            <hr class="header-divider" />
-            <div class="header-badges">
-                <Badge
-                    src="/88x31/sonnyminion.gif"
-                    alt="woof woof kaboom"
-                    href="https://www.youtube.com/@sawneydawgey/"
-                />
-                <Badge
-                    src="/88x31/sonnyminion.gif"
-                    alt="woof woof kaboom"
-                    href="https://www.youtube.com/@sawneydawgey/"
-                />
-            </div>
-        </div>
-
-        <!-- 2026 project -->
-        <div class="header-box">
-            <img
-                class="header-image"
-                src="/img/nothing project.jpg"
-                alt="nothing project"
+            <Badge
+                src="/88x31/youtube.png"
+                alt="song on youtube"
+                href="https://www.youtube.com/watch?v=qsA0-d0bP7k/"
             />
-            <hr class="header-divider" />
-            <p class="header-text">nothing project</p>
-            <span class="header-date">2026</span>
-            <hr class="header-divider" />
-            <div class="header-badges">
-                <Badge
-                    src="/88x31/newgrounds.gif"
-                    alt="video on newgrounds"
-                    href="https://www.newgrounds.com/portal/view/1047943/"
-                />
-                <Badge
-                    src="/88x31/youtube.png"
-                    alt="video on youtube"
-                    href="https://www.youtube.com/watch?v=EdE0L9Tcnxc/"
-                />
-            </div>
         </div>
+    </Project>
 
-        <!-- 2025 project -->
-        <div class="header-box">
-            <img
-                class="header-image"
-                src="/img/rebound repertoire.png"
-                alt="album picture"
+    <!-- nothing project -->
+
+    <Project
+        src="/img/nothing project.jpg"
+        alt="nothing project"
+        title="nothing project"
+        year="2026"
+        date=""
+    >
+        <div class="project-badges">
+            <Badge
+                src="/88x31/newgrounds.gif"
+                alt="video on newgrounds"
+                href="https://www.newgrounds.com/portal/view/1047943/"
             />
-            <hr class="header-divider" />
-            <p class="header-text">rebound repertoire</p>
-            <span class="header-date">2025</span>
-            <hr class="header-divider" />
-            <div class="header-badges">
-                <Badge
-                    src="/88x31/bandcamp.png"
-                    alt="song on bandcamp"
-                    href="https://sonnydoggy.bandcamp.com/album/rebound-repertoire/"
-                />
-                <Badge
-                    src="/88x31/youtube.png"
-                    alt="song on youtube"
-                    href="https://www.youtube.com/watch?v=UbcMoivIvuQ/"
-                />
-            </div>
-        </div>
-
-        <!-- 2024 project -->
-        <div class="header-box">
-            <img
-                class="header-image"
-                src="/img/mart montes.png"
-                alt="album picture"
+            <Badge
+                src="/88x31/youtube.png"
+                alt="video on youtube"
+                href="https://www.youtube.com/watch?v=EdE0L9Tcnxc/"
             />
-            <hr class="header-divider" />
-            <p class="header-text">Mart Montes</p>
-            <span class="header-date">2024</span>
-            <hr class="header-divider" />
-            <div class="header-badges">
-                <Badge
-                    src="/88x31/bandcamp.png"
-                    alt="song on bandcamp"
-                    href="https://sonnydoggy.bandcamp.com/track/mart-montes/"
-                />
-                <Badge
-                    src="/88x31/youtube.png"
-                    alt="song on youtube"
-                    href="https://www.youtube.com/watch?v=hFZNawRunTo/"
-                />
-            </div>
         </div>
+    </Project>
 
-        <!-- 2024 project -->
-        <div class="header-box">
-            <img
-                class="header-image"
-                src="/img/caustical.png"
-                alt="album picture"
+    <!-- rebound repertoire -->
+
+    <Project
+        src="/img/rebound repertoire.png"
+        alt="album picture"
+        title="rebound repertoire"
+        year="2025"
+        date=""
+    >
+        <div class="project-badges">
+            <Badge
+                src="/88x31/bandcamp.png"
+                alt="song on bandcamp"
+                href="https://sonnydoggy.bandcamp.com/album/rebound-repertoire/"
             />
-            <hr class="header-divider" />
-            <p class="header-text">caustical</p>
-            <span class="header-date">2024</span>
-            <hr class="header-divider" />
-            <div class="header-badges">
-                <Badge
-                    src="/88x31/bandcamp.png"
-                    alt="song on bandcamp"
-                    href="https://sonnydoggy.bandcamp.com/track/caustical/"
-                />
-                <Badge
-                    src="/88x31/youtube.png"
-                    alt="song on youtube"
-                    href="https://www.youtube.com/watch?v=FEYHoshDPCU/"
-                />
-            </div>
-        </div>
-
-        <!-- 2024 project -->
-        <div class="header-box">
-            <img
-                class="header-image"
-                src="/img/wolfspace_powder.png"
-                alt="album picture"
+            <Badge
+                src="/88x31/youtube.png"
+                alt="song on youtube"
+                href="https://www.youtube.com/watch?v=UbcMoivIvuQ/"
             />
-            <hr class="header-divider" />
-            <p class="header-text">WOLFspace_POWDER</p>
-            <span class="header-date">2024</span>
-            <hr class="header-divider" />
-            <div class="header-badges">
-                <Badge
-                    src="/88x31/bandcamp.png"
-                    alt="song on bandcamp"
-                    href="https://sonnydoggy.bandcamp.com/album/wolfspace-powder/"
-                />
-                <Badge
-                    src="/88x31/youtube.png"
-                    alt="song on youtube"
-                    href="https://www.youtube.com/watch?v=ioUvFuldR1s/"
-                />
-            </div>
         </div>
+    </Project>
 
-        <!-- 2023 project -->
-        <div class="header-box">
-            <img
-                class="header-image"
-                src="/img/shattering core.png"
-                alt="album picture"
+    <!-- mart montes -->
+
+    <Project
+        src="/img/mart montes.png"
+        alt="album picture"
+        title="Mart Montes"
+        year="2024"
+        date=""
+    >
+        <div class="project-badges">
+            <Badge
+                src="/88x31/bandcamp.png"
+                alt="song on bandcamp"
+                href="https://sonnydoggy.bandcamp.com/track/mart-montes/"
             />
-            <hr class="header-divider" />
-            <p class="header-text">SHATTERING CORE</p>
-            <span class="header-date">2023</span>
-            <hr class="header-divider" />
-            <div class="header-badges">
-                <Badge
-                    src="/88x31/bandcamp.png"
-                    alt="song on bandcamp"
-                    href="https://sonnydoggy.bandcamp.com/album/shattering-core/"
-                />
-                <Badge
-                    src="/88x31/youtube.png"
-                    alt="song on youtube"
-                    href="https://www.youtube.com/watch?v=WkYb0lnxme0/"
-                />
-            </div>
-        </div>
-
-        <!-- 2023 project -->
-        <div class="header-box">
-            <img
-                class="header-image"
-                src="/img/dreaming in a faithful world.jpg"
-                alt="album picture"
+            <Badge
+                src="/88x31/youtube.png"
+                alt="song on youtube"
+                href="https://www.youtube.com/watch?v=hFZNawRunTo/"
             />
-            <hr class="header-divider" />
-            <p class="header-text">Dreaming in a Faithful World</p>
-            <span class="header-date">2023</span>
-            <hr class="header-divider" />
-            <div class="header-badges">
-                <Badge
-                    src="/88x31/bandcamp.png"
-                    alt="song on bandcamp"
-                    href="https://sonnydoggy.bandcamp.com/album/dreaming-in-a-faithful-world/"
-                />
-                <Badge
-                    src="/88x31/youtube.png"
-                    alt="song on youtube"
-                    href="https://www.youtube.com/watch?v=qsA0-d0bP7k/"
-                />
-            </div>
         </div>
+    </Project>
 
-        <!-- shit n stuff -->
+    <!-- caustical -->
 
-        <div class="project-box">
-            <Project
-                src="/img/sonnyminion.png"
-                alt="image of a dog"
-                href="https://www.youtube.com/@sawneydawgey/"
-
-                title="it is november"
-
-                year="2026"
-                date=""
+    <Project
+        src="/img/caustical.png"
+        alt="album picture"
+        title="caustical"
+        year="2024"
+        date=""
+    >
+        <div class="project-badges">
+            <Badge
+                src="/88x31/bandcamp.png"
+                alt="song on bandcamp"
+                href="https://sonnydoggy.bandcamp.com/track/caustical/"
             />
-            <div class="badges">
-                <Badge
-                    src="/88x31/bandcamp.png"
-                    alt="song on bandcamp"
-                    href="https://sonnydoggy.bandcamp.com/album/dreaming-in-a-faithful-world/"
-                />
-                <Badge
-                    src="/88x31/youtube.png"
-                    alt="song on youtube"
-                    href="https://www.youtube.com/watch?v=qsA0-d0bP7k/"
-                />
-            </div>
+            <Badge
+                src="/88x31/youtube.png"
+                alt="song on youtube"
+                href="https://www.youtube.com/watch?v=FEYHoshDPCU/"
+            />
         </div>
+    </Project>
 
-        <!-- shit n stuff 2 -->
+    <!-- wolfspace_powder -->
 
-        <div class="project-box">
-            <Project
-                src="/img/sonnyminion.png"
-                alt="image of a dog"
-                href="https://www.youtube.com/@sawneydawgey/"
-
-                title="my dog is not derpy at all and is in fact cool"
-
-                year="2026"
-                date=""
-            >
-                <div class="project-badges">
-                    <Badge
-                        src="/88x31/bandcamp.png"
-                        alt="song on bandcamp"
-                        href="https://sonnydoggy.bandcamp.com/album/dreaming-in-a-faithful-world/"
-                    />
-                    <Badge
-                        src="/88x31/youtube.png"
-                        alt="song on youtube"
-                        href="https://www.youtube.com/watch?v=qsA0-d0bP7k/"
-                    />
-                </div>
-            </Project>
+    <Project
+        src="/img/wolfspace_powder.png"
+        alt="album picture"
+        title="WOLFspace_POWDER"
+        year="2024"
+        date=""
+    >
+        <div class="project-badges">
+            <Badge
+                src="/88x31/bandcamp.png"
+                alt="song on bandcamp"
+                href="https://sonnydoggy.bandcamp.com/album/wolfspace-powder/"
+            />
+            <Badge
+                src="/88x31/youtube.png"
+                alt="song on youtube"
+                href="https://www.youtube.com/watch?v=ioUvFuldR1s/"
+            />
         </div>
-    </div>
+    </Project>
+
+    <!-- shattering core -->
+
+    <Project
+        src="/img/shattering core.png"
+        alt="album picture"
+        title="SHATTERING CORE"
+        year="2023"
+        date=""
+    >
+        <div class="project-badges">
+            <Badge
+                src="/88x31/bandcamp.png"
+                alt="song on bandcamp"
+                href="https://sonnydoggy.bandcamp.com/album/shattering-core/"
+            />
+            <Badge
+                src="/88x31/youtube.png"
+                alt="song on youtube"
+                href="https://www.youtube.com/watch?v=WkYb0lnxme0/"
+            />
+        </div>
+    </Project>
+
+    <!-- dreaming in a faithful world -->
+
+    <Project
+        src="/img/dreaming in a faithful world.jpg"
+        alt="album picture"
+        title="Dreaming in a Faithful World"
+        year="2023"
+        date=""
+    >
+        <div class="project-badges">
+            <Badge
+                src="/88x31/bandcamp.png"
+                alt="song on bandcamp"
+                href="https://sonnydoggy.bandcamp.com/album/dreaming-in-a-faithful-world/"
+            />
+            <Badge
+                src="/88x31/youtube.png"
+                alt="song on youtube"
+                href="https://www.youtube.com/watch?v=qsA0-d0bP7k/"
+            />
+        </div>
+    </Project>
 </div>
 
 <style>
-    .project-box {
+    .project-cards {
         display: flex;
-        gap: 1rem; /* space between boxes */
-        flex-wrap: wrap; /* wraps to next line if too many */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
-
     .project-badges {
         display: flex;
         flex-direction: row;
