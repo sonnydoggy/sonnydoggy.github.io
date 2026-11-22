@@ -15,7 +15,7 @@ interface Props {
 const { src, alt, href, loading } = Astro.props;
 ---
 
-<a href={href || null} style="display: block">
+<a class="badges" href={href || null}>
     <Image
         src={src}
         alt={alt}
@@ -24,3 +24,10 @@ const { src, alt, href, loading } = Astro.props;
         loading={loading || "lazy"}
     />
 </a>
+
+<style>
+    .badges {
+        display: flex;
+        align-items: left;
+    }
+</style>

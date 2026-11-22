@@ -27,51 +27,35 @@ const { src, alt, href, title, year, date, loading } = Astro.props;
         loading={loading || "lazy"}
         class="project-image"
     />
-    <p class="project-title">{title}</p>
-    <p class="project-year">{year}</p>
-    <p class="project-date">{date}</p>
+    {title && <p class="project-title">{title}</p>}
+    {year && <p class="project-year">{year}</p>}
+    {date && <p class="project-date">{date}</p>}
+    <hr class="project-divider" />
+    <slot />
 </div>
 
 <style>
-    .card {
-        /**/
-    }
-
-    /* did you mean to put the page header style here? cuz it's in PageHeader.astro no? */
-    /* temporary */
-    .page-header {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid var(--base02);
-        align-items: center;
-    }
-
-    .header-boxes {
-        display: flex;
-        gap: 1rem; /* space between boxes */
-        flex-wrap: wrap; /* wraps to next line if too many */
-    }
-
     .card {
         display: flex;
         flex-direction: column;
         align-items: center;
         border: 2px solid var(--base03);
-        background-color: var(--base01); /* subtle background tint */
-        width: var(--boxsize); /* shrinks to the image width */
+        background-color: var(--base01);
+        width: 15rem;
+        margin: 0;
     }
 
     .project-image {
         border-bottom: 2px solid var(--base03);
-        margin: 0rem;
+        margin: 0;
     }
 
     .project-title {
         text-align: center;
-        padding: 0.25rem;
         max-width: 100%;
         word-wrap: break-word;
         overflow-wrap: break-word;
+        padding: 0.5rem;
         margin: 0;
     }
 
@@ -80,6 +64,8 @@ const { src, alt, href, title, year, date, loading } = Astro.props;
         font-size: 0.9em;
         opacity: 0.75;
         font-style: italic;
+        padding: 0.5rem;
+        margin: 0;
     }
 
     .project-date {
@@ -87,5 +73,14 @@ const { src, alt, href, title, year, date, loading } = Astro.props;
         font-size: 0.9em;
         opacity: 0.75;
         font-style: italic;
+        padding: 0.5rem;
+        margin: 0;
+    }
+
+    .project-divider {
+        width: 100%;
+        border: none;
+        border-top: 2px solid var(--base03);
+        margin: 0;
     }
 </style>
