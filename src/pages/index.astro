@@ -1,5 +1,6 @@
 ---
 import PageHeader from "../components/PageHeader.astro";
+import PageProjects from "../components/PageProjects.astro";
 import PageFooter from "../components/PageFooter.astro";
 import StarsBackdrop from "../components/StarsBackdrop.astro";
 
@@ -28,6 +29,8 @@ const compiled = await content.compiledContent();
             <article>
                 <Fragment set:html={compiled} />
             </article>
+
+            <PageProjects />
 
             <PageFooter />
         </main>
