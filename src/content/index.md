@@ -57,11 +57,10 @@ things i have some experience in:
 - [x] center projects section
 - [x] make projects section separate file
 - [x] add project type in projects
+- [ ] add project type
+- [ ] make space under badges in project cards go away
 
 ---
-
-hello i am supposed to be the projects but my unpaid worker hasn't gotten here
-yet
 
 <style>
     /* links appear blue/purple by default and that's yucky. here's something nicer */
