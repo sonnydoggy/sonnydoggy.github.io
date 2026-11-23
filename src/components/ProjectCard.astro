@@ -8,7 +8,7 @@ import { Image } from "astro:assets";
 interface Props {
     src: string;
     alt: string;
-    text: string;
+    title: string;
     year: string;
     date: string;
     type: string;
@@ -19,7 +19,7 @@ interface Props {
 const { src, alt, href, title, year, date, type, loading } = Astro.props;
 ---
 
-<div class="card">
+<div class="card" data-type={type ?? "Uncategorized"}>
     <Image
         src={src}
         alt={alt}
@@ -34,8 +34,11 @@ const { src, alt, href, title, year, date, type, loading } = Astro.props;
         <div class="project-info">
             <p class="project-date">
                 {year}
-                {year && date && ", "}
-                {date}
+
+                <!-- i think it's stylistically cooler to only have year date, but the option is still here -->
+
+                <!-- {year && date && ", "} -->
+                <!-- {date} -->
             </p>
             {type && <p class="project-type">{type}</p>}
         </div>

@@ -6,6 +6,26 @@ import Badge from "./Badge.astro";
 import Project from "./ProjectCard.astro";
 ---
 
+<!-- filter buttons -->
+
+<div class="filter-buttons">
+    <button class="filter-btn active" data-filter="All">
+        All
+    </button>
+    <button class="filter-btn" data-filter="Short Film,Short Series">
+        Films
+    </button>
+    <button class="filter-btn" data-filter="Animation">
+        Animations
+    </button>
+    <button class="filter-btn" data-filter="Album,EP">
+        Album & EPs
+    </button>
+    <button class="filter-btn" data-filter="Single">
+        Singles
+    </button>
+</div>
+
 <div class="project-cards">
     <!-- the template -->
 
@@ -38,7 +58,8 @@ import Project from "./ProjectCard.astro";
         alt="nothing project"
         title="nothing project"
         year="2026"
-        date=""
+        date="May 3"
+        type="Short Film"
     >
         <div class="project-badges">
             <Badge
@@ -206,7 +227,7 @@ import Project from "./ProjectCard.astro";
         title="rebrand debut"
         year="2025"
         date="Mar 28"
-        type="Video"
+        type="Animation"
     >
         <div class="project-badges">
             <Badge
@@ -230,7 +251,7 @@ import Project from "./ProjectCard.astro";
         <div class="project-badges">
             <Badge
                 src="/88x31/youtube.png"
-                alt="song on youtube"
+                alt="video on youtube"
                 href="https://www.youtube.com/watch?v=APO5Ye_FeYA/"
             />
         </div>
@@ -249,7 +270,7 @@ import Project from "./ProjectCard.astro";
         <div class="project-badges">
             <Badge
                 src="/88x31/youtube.png"
-                alt="song on youtube"
+                alt="video series on youtube"
                 href="https://www.youtube.com/playlist?list=PLObdqhzeE01U/"
             />
         </div>
@@ -377,6 +398,33 @@ import Project from "./ProjectCard.astro";
 </div>
 
 <style>
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: -3rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        border: 2px solid var(--base03);
+        background-color: var(--base01);
+        color: inherit;
+        font-family: inherit;
+        cursor: pointer;
+    }
+
+    .filter-btn:hover {
+        background: var(--base03);
+    }
+
+    .filter-btn.active {
+        background: var(--base05);
+        border-color: var(--base05);
+        color: var(--base01);
+    }
+
     .project-cards {
         display: flex;
         flex-wrap: wrap;
@@ -393,3 +441,34 @@ import Project from "./ProjectCard.astro";
         flex-wrap: wrap;
     }
 </style>
+
+<!-- filter script -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".filter-btn");
+        const cards = document.querySelectorAll(".card");
+
+        buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                // swap the "active" class to the clicked button
+                buttons.forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const filter = btn.getAttribute("data-filter");
+                const filters = filter.split(",");
+
+                // show / hide cards
+                cards.forEach((card) => {
+                    const type = card.getAttribute("data-type");
+
+                    if (filters.includes("All") || filters.includes(type)) {
+                        card.style.display = ""; // show
+                    } else {
+                        card.style.display = "none"; // hide
+                    }
+                });
+            });
+        });
+    });
+</script>
