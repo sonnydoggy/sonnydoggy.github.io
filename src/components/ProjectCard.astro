@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from "astro/dist";
 import { Image } from "astro:assets";
 
 // href and loading are optional
@@ -16,12 +17,25 @@ interface Props {
     loading?: "lazy" | "eager";
 }
 
+// so this wasn't quite as straightforward as i thought.
+// it's either this or import each image individually :c
+// all your project images should now go in /src/assets/img/projects/ otherwise astro won't find them
+// but now you can just pass the image filename into src, e.g. src="how so.png" -- it's relative to that directory
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/img/projects/*.{jpeg,jpg,png,gif}",
+);
+
 const { src, alt, href, title, year, date, type, loading } = Astro.props;
+
+if (!images[src])
+    throw new Error(
+        `"${src}" does not exist in glob: "src/assets/img/projects/*.{jpeg,jpg,png,gif}"`,
+    );
 ---
 
 <div class="card" data-type={type ?? "Uncategorized"}>
     <Image
-        src={src}
+        src={images[src]}
         alt={alt}
         width={15 * 16}
         height={15 * 16}
