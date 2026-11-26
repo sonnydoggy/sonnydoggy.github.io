@@ -35,7 +35,7 @@ if (!images[src])
 
 <div class="card" data-type={type ?? "Uncategorized"}>
     <Image
-        src={images[src]}
+        src={images[src]()}
         alt={alt}
         width={15 * 16}
         height={15 * 16}
