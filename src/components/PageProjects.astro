@@ -26,6 +26,63 @@ import Project from "./ProjectCard.astro";
     </button>
 </div>
 
+{/*
+proposal to make this more data-driven and modular: could dump this all into a projects.json or sumshit somewhere?
+*slightly* less flexibility, but should make updating the project lists a good bit easier. we can also sort them
+automatically by date or whatever, so it won't matter what order you put them in.
+
+up to you, if you prefer what we have now we can just keep that. lmk c:
+
+e.g:
+
+{
+    projects: [
+        {
+            "title": "my dog is cool and awesome",
+            "year": 2026,
+            "date": "2026-11-12",
+            "type": "animal",
+            "img": "/src/assets/img/projects/sonnyminion.png",
+            "alt": "image of a dog",
+            "badges": [
+                {
+                    "src": "/88x31/bandcamp.png",
+                    "alt": "song on bandcamp",
+                    "href": "https://sonnydoggy.bandcamp.com/album/dreaming-in-a-faithful-world/"
+                },
+                {
+                    "src": "/88x31/youtube.png",
+                    "alt": "song on youtube",
+                    "href": "https://www.youtube.com/watch?v=qsA0-d0bP7k/"
+                }
+            ]
+        },
+        {
+            "title": "I MAKE ME MENTAL",
+            "year": 2026,
+            "date": "2026-09-03",
+            "type": "Album",
+            "img": "/src/assets/img/projects/i make me mental.png",
+            "alt": "album picture",
+            "badges": [
+                {
+                    "src": "/88x31/bandcamp.png",
+                    "alt": "album on bandcamp",
+                    "href": "https://sonnydoggy.bandcamp.com/album/i-make-me-mental-first-half/"
+                },
+                {
+                    "src": "/88x31/youtube.png",
+                    "alt": "album on youtube",
+                    "href": "https://www.youtube.com/watch?v=8s3GoGDMhYA/"
+                }
+            ]
+        },
+        ...
+    ]
+}
+
+*/}
+
 <div class="project-cards">
     <!-- the template -->
 
