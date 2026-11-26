@@ -566,8 +566,12 @@ import Project from "./ProjectCard.astro";
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".filter-btn");
-        const cards = document.querySelectorAll(".card");
+        const buttons = document.querySelectorAll(
+            ".filter-btn",
+        ) as NodeListOf<HTMLButtonElement>;
+        const cards = document.querySelectorAll(
+            ".card",
+        ) as NodeListOf<HTMLElement>;
 
         buttons.forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -575,12 +579,12 @@ import Project from "./ProjectCard.astro";
                 buttons.forEach((b) => b.classList.remove("active"));
                 btn.classList.add("active");
 
-                const filter = btn.getAttribute("data-filter");
+                const filter = btn.getAttribute("data-filter")!;
                 const filters = filter.split(",");
 
                 // show / hide cards
                 cards.forEach((card) => {
-                    const type = card.getAttribute("data-type");
+                    const type = card.getAttribute("data-type")!;
 
                     if (filters.includes("All") || filters.includes(type)) {
                         card.style.display = ""; // show
